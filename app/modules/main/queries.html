@@ -1,0 +1,30 @@
+<div id="queries">
+  <div ng-controller="QueriesCtrl">
+    
+  <div class="container-fluid">
+    <div class="row">
+        <h3>Exisiting queries:</h3>
+        <table class="table" class="table">
+          <tr class="fadeIn animated" ng-repeat="query in queries" >
+            <td class="text-left">
+              {{query.name}}
+            </td>
+            <td>
+              {{query.description}}
+            </td>
+            <td>
+              {{query.sql}}
+            </td>
+            <td>
+              <a class="btn btn-sm btn-danger" ui-sref="app.flights.view({queryId: query.id})">View</a>
+              <!--<button class="btn btn-sm btn-danger" ng-click="getData(query.id)">View</button>-->
+            </td>
+          </tr>
+        </table>
+        
+      </div>
+    </div>          
+  </div>
+</div>
+<div ui-view/>
+
