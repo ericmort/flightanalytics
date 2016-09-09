@@ -52,7 +52,7 @@ $purple: rgb(143,131,202);
 //Colors from Google material design
 
 $pink: #E91E63;
-$red:  #EF5350;
+$red:  #45C1EF;
 $blue: #2196F3;
 $green: #CCFF90;
 
@@ -72,11 +72,11 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Work Sans", "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-  background-color: transparent;
-  background: rgb(255,255,255);
+  //background-color: transparent;
+  //background: rgb(255,255,255);
   cursor:auto;
   font-size: 10px;
-  line-height: 10px;
+  
 
 }
 
@@ -86,7 +86,9 @@ body {
 }
 
 .container {
-  max-width: 1024px;
+  width: 100%;
+  padding-left:50px;
+  padding-right:50px;
   
 }
 

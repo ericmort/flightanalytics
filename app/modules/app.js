@@ -43,29 +43,33 @@ var module = angular.module('FlightAnalytics', [
       });
 
       $stateProvider.state('app', {
-        url: '/app',
+        url: '/app/:queryId',
         templateUrl: 'modules/main/main.html',
         controller: 'MainCtrl',
         resolve: {
- 
+          data: function(QueryService, $stateParams, $q, $log) {
+              var queryId = 0;
+              if ($stateParams.queryId) {
+                queryId = $stateParams.queryId
+              }
+              var promise = QueryService.getData(queryId).then(function success(data){
+                return data;
+              }, function fail(){$log.error("Error getting data...");});
+              $log.debug("resolving results: ", $stateParams.queryId)
+              
+              return promise; 
+          },
+      
+
+
         }
       });
 
-      $stateProvider.state('app.flights', {
-        url: '/queries/:queryId',
+      /*$stateProvider.state('app.flights', {
+        url: '/:queryId',
         templateUrl: 'modules/main/view.html',
         controller: 'QueriesCtrl',
-        resolve: {
-          data: function(QueryService, $stateParams, $q, $log) {
-              $log.debug("resolving results: ", $stateParams.queryId)
-              return QueryService.getData($stateParams.queryId)
-          },
-          queryId: function($stateParams) {
-              return $stateParams.queryId
-          }
-
-
-        }
+        
       });
 
       /*$stateProvider.state('app.flights.view', {
@@ -123,7 +127,7 @@ module.run(['$rootScope', '$state', '$location', '$log', function ($rootScope, $
     if (appstax.currentUser()) {
       $rootScope.currentUser = appstax.currentUser().username;
       $log.debug('User is logged in');
-      $location.path("/app");
+      $location.path("/app/0");
     } else {
       $location.path("/");
       $log.debug('User is not logged in');
@@ -132,7 +136,10 @@ module.run(['$rootScope', '$state', '$location', '$log', function ($rootScope, $
   });
 
   $rootScope.$on("$stateChangeSuccess", function (event, toState, fromState, fromParams) {
-        
+    $log.debug("State change success--");
+    $log.debug("fromState", fromState);
+    $log.debug("fromParams", fromParams);
+    $log.debug("toState", toState);
     $rootScope.loading = false;
         
   });

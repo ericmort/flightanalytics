@@ -1,0 +1,95 @@
+.nv-background {
+  background: red !important; }
+  .nv-background rect {
+    background: red !important; }
+
+#app .navbar-custom {
+  background: #ECF0F1; }
+  #app .navbar-custom a {
+    color: #334145; }
+
+#app .btn {
+  margin-top: 7px;
+  margin-left: 10px;
+  background-color: transparent; }
+
+#app .dropdown a {
+  color: #0097D7; }
+
+#app .dropdown i {
+  font-size: 18px;
+  color: #334145; }
+
+#app .dropdown-toggle i, #app button i {
+  color: #fff;
+  color: #334145; }
+
+#app .dropdown-menu a {
+  color: #2C3E50 !important; }
+
+#hero {
+  padding-top: 300px;
+  padding-bottom: 300px; }
+
+input {
+  border-color: #f0f0f0 !important;
+  box-shadow: none;
+  -webkit-appearance: none !important;
+  -moz-appearance: none;
+  appearance: none;
+  font-weight: 400; }
+
+/* Remove any predefined styling on the email and password input fields*/
+input[type="email"], input[type="password"] {
+  /* Then Style */
+  border-radius: 3px;
+  padding: 10px;
+  line-height: 20px;
+  background: transparent;
+  box-shadow: none !important; }
+
+#form {
+  height: 100vh;
+  background: #fff; }
+  #form h2 {
+    padding: 0; }
+  #form .form-wrapper {
+    padding-bottom: 50px;
+    margin: 0 auto;
+    max-width: 400px;
+    margin-top: 20%;
+    background: transparent; }
+  #form .panel {
+    border-color: #dde4e6;
+    background: transparent; }
+  #form .panel-heading {
+    color: #7F8C8D;
+    border-color: #eee;
+    background: #ECF0F1; }
+  #form .panel-body {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: #fff;
+    padding-left: 40px;
+    padding-right: 40px; }
+  #form .panel-footer {
+    border-color: #eee;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #ECF0F1;
+    padding-left: 40px;
+    padding-right: 40px; }
+  #form label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px; }
+  #form p {
+    font-size: 14px; }
+  #form .btn-success {
+    background: #45C1EF;
+    border-color: #45C1EF;
+    color: #fff; }
+  #form .btn-success:hover {
+    background: rgba(69, 193, 239, 0.8);
+    border-color: #45C1EF; }

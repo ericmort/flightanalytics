@@ -1,12 +1,13 @@
 'use strict';
 
-angular.module('FlightAnalytics').controller('QueriesCtrl', function ($log, $scope, $rootScope, $state, conf, QueryService, data, queryId) {
+angular.module('FlightAnalytics').controller('QueriesCtrl', function ($log, $scope, $rootScope, $state,$stateParams, conf, QueryService, data) {
    $log.debug('Entering QueriesCtrl');
    $scope.currentUser = appstax.currentUser();
 
    $scope.user = appstax;
 
    var queries = QueryService.getQueries()
+   var queryId = $stateParams.queryId;
 
    console.log("queries:", queries)
    $log.debug("User is: ", $scope.user);
@@ -46,6 +47,8 @@ angular.module('FlightAnalytics').controller('QueriesCtrl', function ($log, $sco
                 }
             }
    }
+
+
 
    this.getChartData = function(name, data) {
       $log.debug("name:", name)

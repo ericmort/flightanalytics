@@ -1,6 +1,6 @@
 $brand-color: #555;
 
-$red:  #FF4442;
+$red:  #45C1EF;
 $blue: #0097D7;
 $yellow: #FFC30D;
 $green: #65C873;
@@ -35,6 +35,14 @@ $PURPLE_DARK: #8E44AD;
 
 $GREY_LIGHT:#95A5A6;
 $GREY_DARK:#7F8C8D;
+
+
+.nv-background {
+	background:red !important;
+	rect {
+		background:red !important;
+	}
+}
 
 #app {
 	.navbar-custom {
